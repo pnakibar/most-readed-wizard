@@ -1,5 +1,6 @@
-node src/main.js https://g1.globo.com/politica
-node src/main.js http://www.folha.uol.com.br/
-node src/main.js https://g1.globo.com/
-node src/main.js https://uol.com.br/
-node src/main.js https://veja.abril.com.br/
+node src/main.js g1.globo.com/politica/
+node src/main.js globo.com
+node src/main.js veja.abril.com.br/
+node src/main.js www.estadao.com.br/mais-lidas
+node src/main.js www.uol.com.br/
+node src/main.js www1.folha.uol.com.br/maispopulares/

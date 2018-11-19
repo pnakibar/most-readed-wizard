@@ -5,7 +5,7 @@ const fs = require('fs').promises
 const Promise = require('bluebird')
 var mkdirp = require('mkdirp')
 
-const YEAR = 2017
+const YEAR = 2018
 const URL = process.argv[2]
 
 const rangeOfDate = (initial, final) =>
@@ -45,7 +45,7 @@ async function main() {
   const startDate = moment()
     .year(YEAR)
     .startOf('year')
-  const endDate = moment().clone().month('october').endOf('month')
+  const endDate = moment()
   const formattedDateRange = rangeOfDate(startDate, endDate).map(x =>
     x.format('YYYYMMDD000000')
   )

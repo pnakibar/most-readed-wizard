@@ -3,11 +3,16 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
+  "scripts": {
+    "scrapper": "node src/main.js"
+  },
   "dependencies": {
+    "@types/bluebird": "^3.5.24",
     "axios": "^0.18.0",
     "bluebird": "^3.5.1",
     "cheerio": "^1.0.0-rc.2",
     "csv-stringify": "^4.0.1",
+    "debug": "^4.1.0",
     "eslint": "^5.4.0",
     "eslint-config-standard": "^11.0.0",
     "eslint-plugin-import": "^2.14.0",
@@ -19,6 +24,10 @@
     "mkdirp": "^0.5.1",
     "moment": "^2.22.2",
     "ramda": "^0.25.0",
-    "sqlite3": "^4.0.2"
+    "sqlite3": "^4.0.2",
+    "ts-node": "^7.0.1",
+    "tsc": "^1.20150623.0",
+    "tslint": "^5.11.0",
+    "typescript": "^3.1.6"
   }
 }
