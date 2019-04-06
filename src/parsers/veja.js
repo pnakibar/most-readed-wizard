@@ -2,30 +2,36 @@
  * Parser for the veja.abril.com.br files
  */
 
-const cheerio = require('cheerio')
-const fs = require('fs')
-const files = fs.readdirSync('./src/htmls/veja-abril-com-br-/')
+const cheerio = require("cheerio");
+const fs = require("fs");
+const scrapperResults =
+  "/Users/pedro.nakibar/Workspace-Pedro/most-readed-wizard/scrapper-results/veja-abril-com-br-/";
+const files = fs.readdirSync(scrapperResults);
 
 const treated = files.map(filename => {
-    const file = fs
-        .readFileSync(
-            `/Users/pn/Workspace/tcc/src/htmls/veja-abril-com-br-/${filename}`
-        )
-        .toString()
-    const $ = cheerio.load(file)
-    const topNews = $(
-        '#abril_popular_posts_widget-3 > div > div > div > div > div > span > a'
+  const file = fs.readFileSync(`${scrapperResults}${filename}`).toString();
+  const $ = cheerio.load(file);
+
+  let topNews = [];
+  if (filename >= "20170225194337.html") {
+    topNews = $("span.widget-popular-posts-item-title a")
+      .toArray()
+      .map(x => ({ ...x.attribs, title: x.children[0].data }));
+  } else {
+    topNews = $(
+      "#abril_popular_posts_widget-3 > div > div > div > div > div > span > a"
     )
-        .toArray()
-        .map(x => ({
-            ...x.attribs,
-            title: x.children[0].data
-        }))
+      .toArray()
+      .map(x => ({
+        ...x.attribs,
+        title: x.children[0].data
+      }));
+  }
 
-    return {
-        filename,
-        topNews
-    }
-})
+  return {
+    filename,
+    topNews
+  };
+});
 
-fs.writeFileSync('/Users/pn/Workspace/tcc/veja-abril-com-br-.json', JSON.stringify(treated))
+fs.writeFileSync('/Users/pedro.nakibar/Workspace-Pedro/most-readed-wizard/veja-abril-com-br-', JSON.stringify(treated))
