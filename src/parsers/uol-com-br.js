@@ -1,11 +1,12 @@
 const cheerio = require('cheerio')
 const fs = require('fs')
-const files = fs.readdirSync('./src/htmls/www-uol-com-br-/')
+const scrapperResults = '/Users/pedro.nakibar/Workspace-Pedro/most-readed-wizard/scrapper-results/www-uol-com-br-/'
+const files = fs.readdirSync(scrapperResults)
 
 const treated = files.map(filename => {
   const file = fs
     .readFileSync(
-      `/Users/pn/Workspace/tcc/src/htmls/www-uol-com-br-/${filename}`
+      `${scrapperResults}${filename}`
     )
     .toString()
   const $ = cheerio.load(file)
@@ -23,4 +24,4 @@ const treated = files.map(filename => {
   }
 })
 
-fs.writeFileSync('/Users/pn/Workspace/tcc/www-uol-com-br-.json', JSON.stringify(treated, null, 2))
+fs.writeFileSync('/Users/pedro.nakibar/Workspace-Pedro/most-readed-wizardwww-uol-com-br-.json', JSON.stringify(treated, null, 2))

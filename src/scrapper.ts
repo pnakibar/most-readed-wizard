@@ -1,9 +1,9 @@
-Promise = require('bluebird')
 import axios from 'axios'
 import { promises as fs } from 'fs'
 import mkdirp from 'mkdirp'
 import moment from 'moment'
 import * as R from 'ramda'
+import BPromise from 'bluebird'
 
 const rangeOfDate = (initial, final) =>
   R.until(
@@ -30,7 +30,7 @@ const saveTo = (url, filename, data) => {
   const formattedUrl = url
     .replace(/https:\/\/|http:\/\//, '')
     .replace(/\/|\./g, '-')
-  const filepath = `/Users/pn/Workspace/tcc/src/htmls/${formattedUrl}`
+  const filepath = `/Users/pedro.nakibar/Workspace-Pedro/most-readed-wizard/scrapper-results/${formattedUrl}`
   mkdirp.sync(filepath)
   fs.writeFile(`${filepath}/${filename}.html`, data)
 }
@@ -46,7 +46,7 @@ export async function scrapper(url: string, yearToExtract: number) {
   const formattedDateRange = rangeOfDate(startDate, endDate).map((x) =>
     x.format('YYYYMMDD000000'),
   )
-  return Promise.each(formattedDateRange, async (date) => {
+  return BPromise.each(formattedDateRange, async (date) => {
     try {
       const apiResponse = await getFromWayback(url, date)
       const {
