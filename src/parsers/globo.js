@@ -1,10 +1,11 @@
 const cheerio = require('cheerio')
 const fs = require('fs')
-const files = fs.readdirSync('./src/htmls/globo/')
+const scrapperResults = '/Users/pedro.nakibar/Workspace-Pedro/most-readed-wizard/scrapper-results/www-globo-com-/'
+const files = fs.readdirSync(scrapperResults)
 
 const treated = files.map(filename => {
     const file = fs
-        .readFileSync(`/Users/pn/Workspace/tcc/src/htmls/globo/${filename}`)
+        .readFileSync(`${scrapperResults}${filename}`)
         .toString()
     const $ = cheerio.load(file)
     const titles = $('a.topglobocom__content-title')
@@ -24,4 +25,4 @@ const treated = files.map(filename => {
 
 
 
-fs.writeFileSync('/Users/pn/Workspace/tcc/globo.json', JSON.stringify(treated))
+fs.writeFileSync('/Users/pedro.nakibar/Workspace-Pedro/most-readed-wizard/globo.json', JSON.stringify(treated))
