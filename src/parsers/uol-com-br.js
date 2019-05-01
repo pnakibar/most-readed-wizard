@@ -24,4 +24,4 @@ const treated = files.map(filename => {
   }
 })
 
-fs.writeFileSync('/Users/pedro.nakibar/Workspace-Pedro/most-readed-wizardwww-uol-com-br-.json', JSON.stringify(treated, null, 2))
+fs.writeFileSync('/Users/pedro.nakibar/Workspace-Pedro/most-readed-wizard/www-uol-com-br-.json', JSON.stringify(treated, null, 2))
