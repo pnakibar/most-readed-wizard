@@ -34,4 +34,4 @@ const treated = files.map(filename => {
   };
 });
 
-fs.writeFileSync('/Users/pedro.nakibar/Workspace-Pedro/most-readed-wizard/veja-abril-com-br-', JSON.stringify(treated))
+fs.writeFileSync('/Users/pedro.nakibar/Workspace-Pedro/most-readed-wizard/veja-abril-com-br-.json', JSON.stringify(treated, null, 2))
