@@ -1,6 +1,9 @@
 const fs = require('fs')
-const file = '/Users/pedro.nakibar/Workspace-Pedro/most-readed-wizard/results-final/veja-abril-com-br-.json'
-const veja = require(file)
+// const veja = '/Users/pedro.nakibar/Workspace-Pedro/most-readed-wizard/results-final/veja-abril-com-br-.json'
+const globo = '/Users/pedro.nakibar/Workspace-Pedro/most-readed-wizard/results-final/globo.json'
+const fileRead = globo
+const file = require(fileRead)
+console.log(file)
 
 const removeArchive = url => {
   const regex = /https?.*(https?.*)/g
@@ -19,7 +22,7 @@ const removeUrl = url  => {
   }
 }
 
-const j = veja.map(x => ({
+const j = file.map(x => ({
   ...x,
   topNews: x.topNews.map(
     y => ({ ...y, ...removeUrl(removeArchive(y.href)) })
@@ -27,6 +30,6 @@ const j = veja.map(x => ({
 }))
 
 
-fs.writeFileSync(file, JSON.stringify(j, null, 2))
+fs.writeFileSync(fileRead, JSON.stringify(j, null, 2))
 
 
