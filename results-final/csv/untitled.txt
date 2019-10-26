@@ -1,0 +1,11 @@
+ 'saude',\
+ 'entretenimento',\
+ 'politica',\
+ 'esporte',\
+ 'ciencia',\
+ 'brasil',\
+ 'educacao',\
+ 'tecnologia',\
+ 'blog',\
+ 'economia',\
+ 'outros']
