@@ -1,10 +1,10 @@
 const fs = require("fs");
 
 const files = {
-  veja: require("/Users/pedro.nakibar/Workspace-Pedro/most-readed-wizard/results-final/veja-abril-com-br-.json"),
-  estadao: require("/Users/pedro.nakibar/Workspace-Pedro/most-readed-wizard/results-final/www-estadao-com-br-.json"),
-  uol: require("/Users/pedro.nakibar/Workspace-Pedro/most-readed-wizard/results-final/www-uol-com-br-.json"),
-  folha: require("/Users/pedro.nakibar/Workspace-Pedro/most-readed-wizard/results-final/www1-folha-uol-com-br-maispopulares-.json"),
+  veja: require("/Users/pedro.nakibar/Workspace/most-readed-wizard/results-final/veja-abril-com-br-.json"),
+  // estadao: require("/Users/pedro.nakibar/Workspace-Pedro/most-readed-wizard/results-final/www-estadao-com-br-.json"),
+  // uol: require("/Users/pedro.nakibar/Workspace-Pedro/most-readed-wizard/results-final/www-uol-com-br-.json"),
+  // folha: require("/Users/pedro.nakibar/Workspace-Pedro/most-readed-wizard/results-final/www1-folha-uol-com-br-maispopulares-.json"),
 }
 const moment = require("moment");
 const csv = require("csv-stringify/lib/sync");
