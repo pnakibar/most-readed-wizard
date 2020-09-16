@@ -5,7 +5,7 @@ const YEAR = 2017;
 const URL = process.argv[2];
 
 const scrapperWrapepr = async url => {
-  await scrapper(url, 2017)
+  // await scrapper(url, 2017)
   await scrapper(url, 2018)
 }
 
@@ -16,7 +16,7 @@ const urls = [
   // 'https://veja.abril.com.br/', // feito
   // 'https://www.uol.com.br/',
   'https://www.folha.uol.com.br/',
-  'https://www.estadao.com.br/',
+  // 'https://www.estadao.com.br/',
 
 ]
 
